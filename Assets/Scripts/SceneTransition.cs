@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SceneTransition : MonoBehaviour
 {
@@ -25,5 +26,19 @@ public class SceneTransition : MonoBehaviour
             Instantiate(ground[i], BackPos, Quaternion.identity);
     }
 
+
+    public void ChangeScene(int _number)
+    {
+        SceneManager.LoadScene(_number);
+    }
+
+    public void ExitGame()
+    {
+        #if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+        #else
+            Application.Quit();
+        #endif
+    }
 
 }
