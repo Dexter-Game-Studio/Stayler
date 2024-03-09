@@ -1,30 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy1 : MonoBehaviour
+public class MovementScript : MonoBehaviour
 {
-    //волкер и его пуля
-    public GameObject enemy;
-    public GameObject bullet;
+    public float speed = 5f; // Скорость движения объекта
 
-    //Скорость врага
-    public float walkspeed;
-
-
-
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        enemy.GetComponent<Transform>().Translate(new Vector2(-1, 0) * walkspeed * Time.deltaTime);
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            Instantiate(bullet, transform.position, Quaternion.identity);
-        }
+        // Получаем текущие координаты объекта
+        Vector3 currentPosition = transform.position;
+        // Вычисляем новые координаты с учетом отрицательной скорости и времени кадра
+        float newX = currentPosition.x - speed * Time.deltaTime;
+        // Обновляем позицию объекта
+        transform.position = new Vector3(newX, currentPosition.y, currentPosition.z);
     }
 }
