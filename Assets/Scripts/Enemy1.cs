@@ -16,10 +16,6 @@ public class Enemy1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        while (true)
-        {
-            enemy.GetComponent<Transform>().Translate(new Vector2(5, 0) * walkspeed * Time.deltaTime);
-        }
-        
+            enemy.GetComponent<Transform>().Translate(new Vector2(-1, 0) * walkspeed * Time.deltaTime);
     }
 }
