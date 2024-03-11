@@ -9,7 +9,10 @@ public class CloneGenerator : MonoBehaviour
     // 2D объект, границы которого будут использованы для диапазона
     public GameObject spawnRangeObject; 
     // Интервал между созданием клонов
-    public float spawnInterval = 2f; 
+    public float spawnInterval = 2f;
+
+    // задержка перед началом игры
+    public float spawnDelay = 2f; 
 
     void Start()
     {
@@ -18,6 +21,8 @@ public class CloneGenerator : MonoBehaviour
 
     IEnumerator SpawnClonesWithInterval()
     {
+        yield return new WaitForSeconds(spawnDelay);
+
         while (true)
         {
             GenerateClone();
