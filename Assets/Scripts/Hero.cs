@@ -25,6 +25,7 @@ public class GridMovement : MonoBehaviour
         // обработчик сметри
         if (health <= 0)
         {
+            Time.timeScale = 0;
             canvasToToggle.enabled = true;
         }
         else
@@ -102,6 +103,7 @@ public class GridMovement : MonoBehaviour
         // Проверяем, столкнулся ли объект с чем-то из блокирующего слоя
         if (blockingLayer == (blockingLayer | (1 << other.gameObject.layer)))
         {
+            health--;
             // Уничтожаем пулю или врага
             Destroy(other.gameObject);
         }

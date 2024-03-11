@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4040107918122365547}
   - component: {fileID: 16585265840607340}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: generator_bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,7 +61,7 @@ GameObject:
   - component: {fileID: 2402660804646447048}
   - component: {fileID: 7451314126134738121}
   - component: {fileID: 7543559019684357560}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
